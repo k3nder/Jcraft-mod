@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "blockkey",
+	"version": "${version}",
+	"name": "blockkey",
+	"description": "minecraft mod to use the fabric api in json",
+	"authors": [
+		"k3nder"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/blockkey/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.k3nder.Blockkey"
+		],
+		"client": [
+			"net.k3nder.BlockkeyClient"
+		]
+	},
+	"mixins": [
+		"blockkey.mixins.json",
+		{
+			"config": "blockkey.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
